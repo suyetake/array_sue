@@ -2,3 +2,4 @@ AllCops:
   Exclude:
    - "Guardfile"
    - "Gemfile"
+   - "madlib_trials/*"

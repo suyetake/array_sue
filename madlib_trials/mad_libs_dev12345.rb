@@ -1,0 +1,454 @@
+-#!/usr/bin/env ruby
+-
+-# Methods and Recursion 
+-# Homework #1
+-# Pivotal Story 105170392
+-
+-# Welcoming statements - must hold off for cucumber tests
+-# #puts 'Welcome to MadLibs'
+-# #puts
+-# #puts 'We are going to make a story with your words.'
+-# #puts
+-
+-def field_assignment(field_name)
+-  puts
+-  puts field_name
+-  gets.chomp.to_s
+-end
+-
+-field_name = 'Please give me an adjective: ==> '
+-
+-finished_yet = FALSE
+-index = 0
+-madlib_field = []
+-madlib_field = ["these","will","get","overwritten"]
+-
+-while !finished_yet
+-  madlib_field[index] = field_assignment(field_name)
+-  index += 1
+-  finished_yet = TRUE
+-end
+-
+-puts madlib_field[0]
+-puts
+-puts 'give me an adjective: ==> '
+-madlib_field[index] = gets.chomp.to_s
+-index += 1
+-puts 
+-puts 'give me an adjective: ==> '
+-madlib_field[index] = gets.chomp.to_s
+-index += 1
+-puts
+-puts "here is the array: " + madlib_field.to_s
+-puts "here is an array within a string: #{madlib_field.to_s}"
+-puts "here is an element within a string: #{madlib_field[0].to_s}"
+-
+-
+-
+View 58  methods_and_recursion/mad_libs_dev2.rb
+@@ -1,58 +0,0 @@
+-#!/usr/bin/env ruby
+-
+-# Methods and Recursion 
+-# Homework #1
+-# Pivotal Story 105170392
+-
+-# Welcoming statements - must hold off for cucumber tests
+-# #puts 'Welcome to MadLibs'
+-# #puts
+-# #puts 'We are going to make a story with your words.'
+-# #puts
+-
+-def field_assignment(field_name)
+-  puts
+-  puts field_name
+-  gets.chomp.to_s
+-end
+-
+-adj_field_name = 'Please give me an adjective: ==> '
+-noun_field_name = 'Please give me a noun: ==> '
+-verb_field_name = 'Please give me a verb: ==> '
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-madlib_field = []
+-madlib_field = ["these","will","get","overwritten"]
+-
+-# printing an unassigned element does nothing and gens no errors:
+-puts madlib_field[6]
+-
+-num_of_adj = 3
+-while !finished_yet
+-  madlib_field[index] = field_assignment(adj_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_adj)
+-end
+-
+-# debugging statements produced as expected:
+-puts madlib_field[0]
+-puts madlib_field[1]
+-puts madlib_field[2]
+-puts madlib_field[3]
+-puts
+-puts 'give me an error for fun: ==> '
+-madlib_field[index] = gets.chomp.to_s
+-index += 1
+-puts 
+-puts 'give me an adjective: ==> '
+-madlib_field[index] = gets.chomp.to_s
+-index += 1
+-puts
+-puts "here is the array: " + madlib_field.to_s
+-puts "here is an array within a string: #{madlib_field.to_s}"
+-puts "here is an element within a string: #{madlib_field[0].to_s}"
+-
+-
+-
+View 96  methods_and_recursion/mad_libs_dev3.rb
+@@ -1,96 +0,0 @@
+-#!/usr/bin/env ruby
+-
+-# Methods and Recursion 
+-# Homework #1
+-# Pivotal Story 105170392
+-
+-# Welcoming statements - must hold off for cucumber tests
+-# #puts 'Welcome to MadLibs'
+-# #puts
+-# #puts 'We are going to make a story with your words.'
+-# #puts
+-
+-def field_assignment(field_name)
+-  puts
+-#  puts field_name
+-  print field_name
+-  gets.chomp.to_s
+-end
+-
+-madlib_adj_field = []
+-madlib_adj_field = ["these","will","get","overwritten"]
+-madlib_noun_field = []
+-madlib_noun_field = ["these","will","get","overwritten"]
+-madlib_verb_field = []
+-madlib_verb_field = ["these","will","get","overwritten"]
+-
+-adj_field_name = 'Please give me an adjective: ==> '
+-noun_field_name = 'Please give me a noun: ==> '
+-verb_field_name = 'Please give me a verb: ==> '
+-
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the adjectives needed
+-num_of_adj = 3
+-while !finished_yet
+-  madlib_adj_field[index] = field_assignment(adj_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_adj)
+-end
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the nouns needed
+-num_of_noun = 2
+-while !finished_yet
+-  madlib_noun_field[index] = field_assignment(noun_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_noun)
+-end
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the verbs needed
+-num_of_verb = 1
+-while !finished_yet
+-  madlib_verb_field[index] = field_assignment(verb_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_verb)
+-end
+-
+-# next loops for output can go here
+-# #finished_yet = FALSE
+-# #index = 0
+-# #count = 0
+-
+-# debugging statements produce as expected:
+-puts madlib_adj_field[0]
+-puts madlib_adj_field[1]
+-puts madlib_adj_field[2]
+-puts madlib_adj_field[3]
+-puts
+-puts madlib_noun_field[0]
+-puts madlib_noun_field[1]
+-puts madlib_noun_field[2]
+-puts madlib_noun_field[3]
+-puts
+-puts madlib_verb_field[0]
+-puts madlib_verb_field[1]
+-puts madlib_verb_field[2]
+-puts madlib_verb_field[3]
+-
+-# code models for embedding arrays in string outputs
+-puts
+-puts "here is the adj array: " + madlib_adj_field.to_s
+-puts "here is the noun array within a string: #{madlib_noun_field.to_s}"
+-puts "here is a verb element within a string: #{madlib_verb_field[0].to_s}"
+-
+-
+-
+View 118  methods_and_recursion/mad_libs_dev4.rb
+@@ -1,118 +0,0 @@
+-#!/usr/bin/env ruby
+-
+-# Methods and Recursion 
+-# Homework #1
+-# Pivotal Story 105170392
+-
+-# Welcoming statements - must hold off for cucumber tests
+-# #puts 'Welcome to MadLibs'
+-# #puts
+-# #puts 'We are going to make a story with your words.'
+-# #puts
+-
+-def field_assignment(field_name)
+-  puts
+-  print field_name
+-  gets.chomp.to_s
+-end
+-
+-madlib_adj_field = []
+-madlib_adj_field = ["these","will","get","overwritten"]
+-madlib_noun_field = []
+-madlib_noun_field = ["these","will","get","overwritten"]
+-madlib_verb_field = []
+-madlib_verb_field = ["these","will","get","overwritten"]
+-
+-adj_field_name = 'Please give me an adjective: ==> '
+-noun_field_name = 'Please give me a noun: ==> '
+-verb_field_name = 'Please give me a verb: ==> '
+-
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the adjectives needed
+-num_of_adj = 3
+-puts
+-puts "Let's first gather #{num_of_adj} adjectives.."
+-
+-while !finished_yet
+-  madlib_adj_field[index] = field_assignment(adj_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_adj)
+-end
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the nouns needed
+-num_of_noun = 12
+-puts
+-puts "Now let's gather #{num_of_noun} nouns.."
+-
+-while !finished_yet
+-  madlib_noun_field[index] = field_assignment(noun_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_noun)
+-end
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the verbs needed
+-num_of_verb = 4
+-puts
+-puts "Lastly, let's gather #{num_of_verb} verbs.."
+-
+-while !finished_yet
+-  madlib_verb_field[index] = field_assignment(verb_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_verb)
+-end
+-
+-# next loops for output can go here
+-# #finished_yet = FALSE
+-# #index = 0
+-# #count = 0
+-adj_index = 0
+-adj_count = 0
+-noun_index = 0
+-noun_count = 0
+-verb_index = 0
+-verb_count = 0
+-
+-puts
+-puts 'Here is the story..'
+-puts
+-puts 'MADLIBS VACATIONS'
+-puts '-----------------'
+-puts "A vacation is when you take a trip to some \
+-#{madlib_adj_field[adj_index]} place"
+-
+-# debugging statements produce as expected:
+-puts madlib_adj_field[0]
+-puts madlib_adj_field[1]
+-puts madlib_adj_field[2]
+-puts madlib_adj_field[3]
+-puts
+-puts madlib_noun_field[0]
+-puts madlib_noun_field[1]
+-puts madlib_noun_field[2]
+-puts madlib_noun_field[3]
+-puts
+-puts madlib_verb_field[0]
+-puts madlib_verb_field[1]
+-puts madlib_verb_field[2]
+-puts madlib_verb_field[3]
+-
+-# code models for embedding arrays in string outputs
+-puts
+-puts "here is the adj array: " + madlib_adj_field.to_s
+-puts "here is the noun array within a string: #{madlib_noun_field.to_s}"
+-puts "here is a verb element within a string: #{madlib_verb_field[0].to_s}"
+-
+-
+-
+View 115  methods_and_recursion/mad_libs_dev45.rb
+@@ -1,115 +0,0 @@
+-#!/usr/bin/env ruby
+-
+-# Methods and Recursion
+-# Homework #1
+-# Pivotal Story 105170392
+-
+-# Welcoming statements - must hold off for cucumber tests
+-# #puts 'Welcome to MadLibs'
+-# #puts
+-# #puts 'We are going to make a story with your words.'
+-# #puts
+-
+-def field_assignment(field_name)
+-  puts
+-  print field_name
+-  gets.chomp.to_s
+-end
+-
+-madlib_adj_field = []
+-madlib_adj_field = ['these', 'will', 'get', 'overwritten']
+-madlib_noun_field = []
+-madlib_noun_field = ['these', 'will', 'get', 'overwritten']
+-madlib_verb_field = []
+-madlib_verb_field = ['these', 'will', 'get', 'overwritten']
+-
+-adj_field_name = 'Please give me an adjective: ==> '
+-noun_field_name = 'Please give me a noun: ==> '
+-verb_field_name = 'Please give me a verb: ==> '
+-
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the adjectives needed
+-num_of_adj = 3
+-puts
+-puts "Let's first gather #{num_of_adj} adjectives.."
+-
+-while !finished_yet
+-  madlib_adj_field[index] = field_assignment(adj_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_adj)
+-end
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the nouns needed
+-num_of_noun = 12
+-puts
+-puts "Now let's gather #{num_of_noun} nouns.."
+-
+-while !finished_yet
+-  madlib_noun_field[index] = field_assignment(noun_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_noun)
+-end
+-finished_yet = FALSE
+-index = 0
+-count = 0
+-
+-# get all the verbs needed
+-num_of_verb = 4
+-puts
+-puts "Lastly, let's gather #{num_of_verb} verbs.."
+-
+-while !finished_yet
+-  madlib_verb_field[index] = field_assignment(verb_field_name)
+-  index += 1
+-  count += 1
+-  finished_yet = (count == num_of_verb)
+-end
+-
+-# next loops for output can go here
+-# #finished_yet = FALSE
+-# #index = 0
+-# #count = 0
+-adj_index = 0
+-adj_count = 0
+-noun_index = 0
+-noun_count = 0
+-verb_index = 0
+-verb_count = 0
+-
+-puts
+-puts 'Here is the story..'
+-puts
+-puts 'MADLIBS VACATIONS'
+-puts '-----------------'
+-puts "A vacation is when you take a trip to some \
+-#{madlib_adj_field[adj_index]} place"
+-
+-# debugging statements produce as expected:
+-puts madlib_adj_field[0]
+-puts madlib_adj_field[1]
+-puts madlib_adj_field[2]
+-puts madlib_adj_field[3]
+-puts
+-puts madlib_noun_field[0]
+-puts madlib_noun_field[1]
+-puts madlib_noun_field[2]
+-puts madlib_noun_field[3]
+-puts
+-puts madlib_verb_field[0]
+-puts madlib_verb_field[1]
+-puts madlib_verb_field[2]
+-puts madlib_verb_field[3]
+-
+-# code models for embedding arrays in string outputs
+-puts
+-puts 'here is the adj array: ' + madlib_adj_field.to_s
+-puts "here is the noun array within a string: #{madlib_noun_field}"
+-puts "here is a verb element within a string: #{madlib_verb_field[0]}"
+ Lock conversation
+0 comments on commit d487df8
+@suyetake
+ Styling with Markdown is supported
+Write Preview
+
+Attach files by dragging & dropping or  selecting them.
+Comment on this commit
+   Unsubscribe  You’re receiving notifications because you’re subscribed to this repository.
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help
+
