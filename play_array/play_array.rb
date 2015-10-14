@@ -6,7 +6,7 @@
 #  array = %w(1 2 3 4 5)
 
 # madlib_field = ['these', 'will', 'get', 'overwritten']
-madlib_field = %w('these', 'will', 'get', 'overwritten')
+madlib_field = %w(these will get overwritten)
 puts madlib_field
 puts madlib_field[0..2]
 puts ''
